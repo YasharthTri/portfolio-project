@@ -2,12 +2,12 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import Resume from './components/Resume';
 import Education from './components/Education';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Certifications from './components/Certifications';
-import Resume from './components/Resume';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -24,23 +24,23 @@ function App() {
         {/* 3. About Profile */}
         <About />
 
-        {/* 4. Education & Qualifications */}
+        {/* 4. Curriculum Vitae / Resume (Shifted after About) */}
+        <Resume />
+
+        {/* 5. Education & Academic Background */}
         <Education />
 
-        {/* 5. Professional Experience & Internships */}
+        {/* 6. Professional Experience & Internships */}
         <Experience />
 
-        {/* 6. Skills & Core Competencies */}
+        {/* 7. Skills & Core Competencies */}
         <Skills />
 
-        {/* 7. Practical Projects & Academic Leadership */}
+        {/* 8. Practical Projects & Academic Leadership */}
         <Projects />
 
-        {/* 8. Certified Credentials & Badges */}
+        {/* 9. Certified Credentials & Badges */}
         <Certifications />
-
-        {/* 9. Curriculum Vitae / Resume */}
-        <Resume />
 
         {/* 10. Contact Information & Inquiries */}
         <Contact />

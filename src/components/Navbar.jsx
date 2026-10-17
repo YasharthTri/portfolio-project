@@ -11,8 +11,8 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
-      const sections = ['hero', 'about', 'education', 'experience', 'skills', 'projects', 'certifications', 'resume', 'contact'];
-      const scrollPosition = window.scrollY + 220;
+      const sections = ['hero', 'about', 'resume', 'education', 'experience', 'skills', 'projects', 'certifications', 'contact'];
+      const scrollPosition = window.scrollY + 200;
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const el = document.getElementById(sections[i]);
@@ -29,12 +29,12 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'About', href: '#about' },
+    { name: 'Resume', href: '#resume' },
     { name: 'Education', href: '#education' },
     { name: 'Experience', href: '#experience' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
     { name: 'Certifications', href: '#certifications' },
-    { name: 'Resume', href: '#resume' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -43,12 +43,12 @@ const Navbar = () => {
       <div className="container nav-container">
         <a href="#hero" className="nav-brand" onClick={() => setMobileMenuOpen(false)}>
           <div className="nav-brand-logo">
-            <Briefcase size={20} />
+            <Briefcase size={18} />
           </div>
           <span>{personalInfo.name}</span>
         </a>
 
-        {/* Desktop Navigation */}
+        {/* Desktop / Responsive Navigation Menu */}
         <nav className={`nav-menu ${mobileMenuOpen ? 'mobile-open' : ''}`}>
           {navLinks.map((link) => (
             <a
@@ -64,10 +64,10 @@ const Navbar = () => {
             href={resumeData.resumePath}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-primary btn-sm"
-            style={{ marginLeft: '0.5rem' }}
+            className="btn btn-primary btn-sm nav-resume-btn"
+            onClick={() => setMobileMenuOpen(false)}
           >
-            <Download size={14} /> Resume
+            <Download size={14} /> Resume PDF
           </a>
         </nav>
 
@@ -76,10 +76,20 @@ const Navbar = () => {
           className="nav-toggle-btn"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle navigation menu"
+          aria-expanded={mobileMenuOpen}
         >
-          {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
+
+      {/* Mobile Drawer Overlay Backdrop */}
+      {mobileMenuOpen && (
+        <div 
+          className="nav-backdrop" 
+          onClick={() => setMobileMenuOpen(false)} 
+          aria-hidden="true" 
+        />
+      )}
     </header>
   );
 };

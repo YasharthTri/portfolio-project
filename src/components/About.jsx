@@ -4,7 +4,7 @@ import { personalInfo } from '../data/portfolioData';
 
 const About = () => {
   return (
-    <section id="about" className="section section-cream">
+    <section id="about" className="section section-ivory">
       <div className="container">
         <div className="section-header">
           <span className="section-tag">
